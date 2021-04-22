@@ -11,7 +11,7 @@ const CountryDetails = () => {
         .then(data => setDetail(data[0]))
     }, []);
 
-    // It takes some time to load the country detaul from useEffects
+    // It takes some time to load the country detail from useEffects
     // That's called Asynchronous task
     // When it gets loaded then we can show the name
     // So we check whether the `detail` array has any element in it
