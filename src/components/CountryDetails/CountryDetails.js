@@ -8,7 +8,7 @@ const CountryDetails = () => {
         const url = `https://restcountries.eu/rest/v2/name/${countryName}`
         fetch(url)
         .then(res => res.json())
-        .then(data => setDetail(data))
+        .then(data => setDetail(data[0]))
     }, []);
 
     // It takes some time to load the country detaul from useEffects
@@ -19,11 +19,11 @@ const CountryDetails = () => {
     // Whenerver the data is loaded in details, means the HTTP request in useEffect completes,
     // This condition becomes true, and data gets rendered.
     // This is called Reactivity, hence we have ReactJS
-    const { name,capital } = detail.length && detail[0];
     return (
         <div>
             <h1>This is country details</h1>
-            <h2>{detail[0].name}</h2>
+            <h2>{detail.name}</h2>
+            <h2>{detail.capital}</h2>
         </div>
     );
 };
